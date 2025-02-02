@@ -1,6 +1,6 @@
 ---
 title: "Notebooks Now! Initiative Evaluation"
-subtitle: "An audit as a foundation for an open compuational notebooks publishing ecosystem"
+subtitle: "Is it a good foundation for an open compuational notebooks publishing ecosystem?"
 short_title: Notebooks Now! Evaluation
 
 authors:
