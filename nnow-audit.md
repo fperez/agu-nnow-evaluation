@@ -26,7 +26,7 @@ affiliations:
     institution: Lawrence Berkeley National Laboratory
     
 abstract: |
-  This report summarizes an evaluation conducted in late 2024 of the AGU _Notebooks Now!_ initiative, focused on its openness, through 3 meetings with staff from AGU and Curvenote. My assessment is that _Notebooks Now!_ is a solid foundation to build publishing systems that include computational notebooks, provides necessary open source tools for scientists to author, is based on openly documented standards and approaches, and creates no undue barriers to competition nor locks key functionality behind specific vendors or proprietary services.
+  This report summarizes an evaluation conducted in late 2024 of the AGU _Notebooks Now!_ initiative, focused on its openness. My assessment is that _Notebooks Now!_ is a solid foundation to build publishing systems that include computational notebooks, provides necessary open source tools for scientists to author, is based on openly documented standards and approaches, and creates no undue barriers to competition nor locks key functionality behind specific vendors or proprietary services.
 
 acknowledgements: |
   I am grateful to Shelley Stahl and Brian Sedora from AGU, and Rowan Cockett from Curvenote, for their time and openness during our discussions.  All three were provided an opportunity to see my draft of this report before I finalized it, but its content and all editorial decisions remain mine.
@@ -45,13 +45,6 @@ exports:
 ---
 
 ```{raw:typst}
-
-#text(fill: blue.darken(30%), weight: "bold", "Abstract")
-
-This report summarizes an evaluation conducted in late 2024 of the AGU _Notebooks Now!_ initiative, focused on its openness. My assessment is that _Notebooks Now!_ is a solid foundation to build publishing systems that include computational notebooks, provides necessary open source tools for scientists to author, is based on openly documented standards and approaches, and creates no undue barriers to competition nor locks key functionality behind specific vendors or proprietary services.
-
-#line(length: 100%, stroke: gray)
-
 #outline(indent:auto, depth:2)
 ```
 
@@ -124,7 +117,7 @@ The following are key outcomes and resources resulting from this effort[^1]:
 
 - [Proceedings of the Python in Science (SciPy) Conferences](https://proceedings.scipy.org). Simlar to the above showcase, but now instead of hand-curated demonstration of AGU science, it shows the use of these tools for a real-world conference where the organizers (with Curvenote's support) adopted them to publish the complete set of proceedings. Importantly, and as a demonstration of the power and flexibility of the toolchain, the team not only used this toolchain for the [2024 proceedings](https://proceedings.scipy.org/2024), they were able to also convert the 2022 and 2023 ones to this format, as well as offer a full archive of all former abstracts dating back to 2008, that includes for each older abstract a link to the static PDF generated with previous technologies.
 
-[^1]: The team at Posit Inc. also contributed to the authorship of some of these documents and made corresponding improvements to the Quarto toolchain; I link to it here but I did not specifically look at their architecture, nor meet with their team, as part of this evaluation.
+[^1]: The team at Posit Inc. also contributed to the authorship of some of these documents and made corresponding improvements to the Quarto toolchain; I link to it here but I did not specifically look at their architecture, nor met with their team, as part of this evaluation.
 
 # Conclusions and Recommendations for further work
 
