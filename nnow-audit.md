@@ -29,7 +29,9 @@ abstract: |
   This report summarizes an evaluation conducted in late 2024 of the AGU _Notebooks Now!_ initiative, focused on its openness. My assessment is that _Notebooks Now!_ is a solid foundation to build publishing systems that include computational notebooks, provides necessary open source tools for scientists to author, is based on openly documented standards and approaches, and creates no undue barriers to competition nor locks key functionality behind specific vendors or proprietary services.
 
 acknowledgements: |
-  I am grateful to Shelley Stahl and Brian Sedora from AGU, and Rowan Cockett from Curvenote, for their time and openness during our discussions.  All three were provided an opportunity to see my draft of this report before I finalized it, but its content and all editorial decisions remain mine.
+  I am grateful to Shelley Stall and Brian Sedora from AGU, and Rowan Cockett from Curvenote, for their time and openness during our discussions.  All three were provided an opportunity to see my draft of this report before I finalized it, but its content and all editorial decisions remain mine.  
+
+# I thank Chris Holdgraf for helpful feedback on earlier drafts; all errors and ommissions remain my sole responsibility.
 
 open_access: true
 
