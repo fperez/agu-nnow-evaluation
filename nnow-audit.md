@@ -39,7 +39,7 @@ numbering: true
 exports:
   - format: pdf
     template: lapreprint-typst
-    kind: v1.0rc1
+    kind: v1.0rc2
 ---
 
 ```{raw:typst}
@@ -90,8 +90,7 @@ In @fig:workflow we see a high-level outline of the steps in the authoring and p
 
 - Submission templates for authors, as described [in the MyST documentation](https://mystmd.org/guide/website-templates). 
 - Continued standardization of the JATS/MECA for notebooks, as described in [_Science Communication with Notebooks_](https://curvenote.github.io/notebooks-in-publishing). This working draft was co-authored by industry and scientific community members, published under CC-BY licensing terms. It contains the authoritative reference on these ideas in a vendor- and tool-agnostic way, as it covers both the MyST and Quarto implementations and had contributions by authors from both ecosystems.
-- Deployment of a website for tool specific submission instructions for the AGU template that can be contributed to by the community/working groups.
-  - **[FIXME: Rowan et al - any link to this?]**
+- Publicly available [submission instructions for authors](https://github.com/Notebooks-Now/submission-instructions) to use the AGU templates for _Notebooks Now!_ submissions. Developed by Curvenote, the instructions live in a public Github repository that others can contribute to.
 - Incorporation of publishing-specific metadata as defined by the metadata working group, also detailed in the above _Science Communication with Notebooks_.
 - [New MyST themes and templates](https://mystmd.org/guide/website-templates), that include specific themes for scientific articles and books. There is a [dedicated Github organization for MyST Templates](https://github.com/myst-templates), that makes it easy for the community to grow the ecosystem of available templates and improve existing ones.
 
