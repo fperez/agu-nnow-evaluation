@@ -1,6 +1,6 @@
 ---
 title: "Notebooks Now! Initiative Evaluation"
-subtitle: "Is it a good foundation for an open compuational notebooks publishing ecosystem?"
+subtitle: "The foundation for an open compuational notebooks publishing ecosystem"
 short_title: Notebooks Now! Evaluation
 
 authors:
@@ -26,12 +26,10 @@ affiliations:
     institution: Lawrence Berkeley National Laboratory
     
 abstract: |
-  This report summarizes an evaluation conducted in late 2024 of the AGU _Notebooks Now!_ initiative, focused on its openness. My assessment is that _Notebooks Now!_ is a solid foundation to build publishing systems that include computational notebooks, provides necessary open source tools for scientists to author, is based on openly documented standards and approaches, and creates no undue barriers to competition nor locks key functionality behind specific vendors or proprietary services.
+  This report summarizes an evaluation conducted in late 2024 of the AGU _Notebooks Now!_ initiative, focused on its openness. We refer as _Computational Notebooks_ to documents that combine natural language with programming code and the results of the code's execution in a single file, examples of which include Jupyter or Mathematica Notebooks. My assessment is that _Notebooks Now!_ is a solid foundation to build publishing systems that include Computational Notebooks as first-class objects for peer-reviewed scholarly publishing. The results of the work completed so far by various stakeholders  provides necessary open source tools for scientists to author, is based on openly documented standards and approaches, and creates no undue barriers to competition nor locks key functionality behind specific vendors or proprietary services.
 
 acknowledgements: |
-  I am grateful to Shelley Stall and Brian Sedora from AGU, and Rowan Cockett from Curvenote, for their time and openness during our discussions.  All three were provided an opportunity to see my draft of this report before I finalized it, but its content and all editorial decisions remain mine.  
-
-# I thank Chris Holdgraf for helpful feedback on earlier drafts; all errors and ommissions remain my sole responsibility.
+  I am grateful to Shelley Stall and Brian Sedora from AGU, and Rowan Cockett from Curvenote, for their time and openness during our discussions.  All three were provided an opportunity to see my draft of this report before I finalized it, but its content and all editorial decisions remain mine.  I thank Chris Holdgraf for helpful feedback on earlier drafts; all errors and ommissions remain my sole responsibility.
 
 open_access: true
 
@@ -43,7 +41,7 @@ numbering: true
 exports:
   - format: pdf
     template: lapreprint-typst
-    kind: v0.1
+    kind: v1.0rc1
 ---
 
 ```{raw:typst}
@@ -54,13 +52,19 @@ exports:
 
 # Scope of this audit and summary: openness for researchers, a level playing field for publishers
 
-This document reports on my disucssions with the AGU and Curvenote teams working on the current _Notebooks Now!_ prototype infrastructure. The information here is based on three one-hour discussions with Brian Sedora and Shelley Stahl from AGU, and Rowan Cockett from Curvenote. My goal was to answer the following question: 
+This document reports on my disucssions with the AGU and Curvenote teams working on the current _Notebooks Now!_ prototype infrastructure. The information here is based on three one-hour discussions with Brian Sedora and Shelley Stall from AGU, and Rowan Cockett from Curvenote. My goal was to answer the following question: 
 
 > Are the publicly available outcomes of the _Notebooks Now!_ initiative a good foundation for **open** pipelines to publish computational notebooks as academic, peer-reviewed literature? Specifically, I looked at whether all tools and processes created or proposed would be **sufficiently open for scientists to use, build upon and modify, and for others to potentially create new efforts in this ecosystem, without any artificial barriers or lock-in that could favor a particular vendor or organization**.
 
 In brief, my conclusion is: to the extent I was able to ascertain in this limited audit, and as per the above goal, **I found no evidence of barriers, blockage or undue favoring of any particular vendor** in the currently developed tools, documentation and plans.  While clearly AGU (and their publisher Wiley) as well as Curvenote have in-depth knowledge of the project based on their own work and participation, I didn't identify any areas where this would create artificial barriers to independent (community-driven or commercial) efforts for alternate publishing mechanisms and projects, or to the workflow of practicing scientists who seek to author and submit compatible documents.
 
-Furthermore, the teams demonstrated that these tools can be used to create rich, interactive publications with all the necessary elements of a scientific paper (equations, tables, figures, bibliographic references, etc.). These can include both rich, modern and accessible HTML, and graceful fallback to static PDF. They can also link to executable environments for reproducible execution of the analysis in the publication. These have been demonstrated both with real-world publications from AGU authors, and in a fully open workflow for the proceedings of the annual SciPy conference.  See [Sec %s](#resources) for details. **[FIXME: Why isn't this reference resolving the number correctly? I'm getting "See Sec ??".]**
+Furthermore, the teams demonstrated that these tools can be used to create rich, interactive publications with all the necessary elements of a scientific paper (equations, tables, figures, bibliographic references, etc.). These can include both rich, modern and accessible HTML, and graceful fallback to static PDF. They can also link to executable environments for reproducible execution of the analysis in the publication. These have been demonstrated both with real-world publications from AGU authors, and in a fully open workflow for the proceedings of the annual SciPy conference.  See Sec. 4 for details. 
+
+Finally, I note that this document focuses only on the implementation of tools in the Jupyter/MyST ecosystem[^myst]. The _Notebooks Now!_ initative also included participation of members from the Quarto ecosystem. I did not evaluate that toolchain, however I note that Quarto developers also contributed to common documents and specifications, helping harmonize the workflow for all implementations.
+
+[^myst]: [MyST](https://mystmd.org), short for "Markedly Structured Text", is an extension to Markdown aimed at scholarly publishing. Originally strated by the author ca. 2017 as [a simple specification](https://github.com/executablebooks/myst) that combined the syntax of Markdown with the programmatic extensibilty of Restructured Text, it was developed with funding from the Sloan Foundation by C. Holdgraf and the Executable Books team, leading to a Sphinx plugin in Python used by JupyterBook v1. Starting in 2020, R. Cockett and the Curvenote team created a [new, modern TypeScript implementation](https://github.com/jupyter-book/mystmd) of the same spec that could operate both in a live JupyterLab session and at the command-line. It could generate HTML, PDF and other outputs. This implementation was contributed to the community by Curvenote as open source and is today the official MyST distribution. MyST will be the engine for JupyterBook v2 ([now an official Jupyter Subproject](https://blog.jupyterbook.org/posts/2024-11-11-jupyter-book-org)), replacing Sphinx and the previous Python plugin.
+
+% FIXME: Why isn't this reference resolving the number correctly? I'm getting "See Sec ??".
 
 # Context: open science and the current realities in publishing
 
@@ -74,10 +78,10 @@ Scientific publishing is a complex ecosystem where a mix of researchers, profess
 
 Importantly, this does _not_ mean that the entire end-to-end toolchain used in commercial publishing was meant to be open sourced. That was never part of the scope of the _Notebooks Now!_ effort, and I recognize that AGU, Curvenote and their partners may have developed proprietary tools as part of their publishing activities, and that these will continue to exist.
 
-My focus was only on ensuring that **scientists could have a clean field for creating notebook-based publications wtihout any proprietary bottlenecks, and that for anyone wanting to work on the publishing side of the problem, the playing field would be open and fair**. Obviously such efforts may require publishing competitors to adapt their existing systems to these new formats or build new tools, I simply looked for any artificial barriers that would hinder such open competition in the marketplace.
+My focus was only on ensuring that **scientists could have a clean field for creating notebook-based publications without any proprietary bottlenecks, and that for anyone wanting to work on the publishing side of the problem, the playing field would be open and fair**. Obviously such efforts may require publishing competitors to adapt their existing systems to these new formats or build new tools. I only looked for any artificial barriers that would hinder such open competition in the marketplace.
 
 
-# Outline of the publishing workflow
+# The publishing workflow
 
 ```{figure} nbpub-outline.png
 :label: fig:workflow
@@ -86,7 +90,7 @@ My focus was only on ensuring that **scientists could have a clean field for cre
 Outline of steps in the workflow for publishing notebooks, with key tools highlighted at various steps in the process.
 ```
 
-In @fig:workflow we see a high-level outline of the steps in the authoring and publishing workflow the _Notebooks Now!_ effort prototyped.  In this system, the following parts were developed with fully open source infrastructure and implementation:
+In @fig:workflow we see a high-level outline of the steps in the authoring and publishing workflow prototyped during the _Notebooks Now!_ effort.  In this system, the following parts were developed with fully open source infrastructure and implementation:
 
 - Submission templates for authors, as described [in the MyST documentation](https://mystmd.org/guide/website-templates). 
 - Continued standardization of the JATS/MECA for notebooks, as desrcribed in [_Science Communication with Notebooks_](https://curvenote.github.io/notebooks-in-publishing). This working draft was co-authored by industry and scientific community members, published under CC-BY licensing terms. It contains the authoritative reference on these ideas in a vendor- and tool-agnostic way, as it covers both the MyST and Quarto implementations and had participation of authors from both ecosystems.
@@ -104,6 +108,7 @@ Both of these include their own tools for peer-review, an obviously key part of 
 
 As indicated above, the existence of these proprietary components is consistent with the scope of the Notebooks Now initiative; I flag them here for completeness of this evaluation.  I hope and expect that, as part of the growing ecosystem of efforts to develop alternative models and workflows for sharing and publishing scientific content, the open parts of this initiative will both be integrated into those efforts and will spur new ideas and tools.
 
+
 (resources)=
 # Key resources and results from the _Notebooks Now!_ initiative
 
@@ -113,7 +118,7 @@ The following are key outcomes and resources resulting from this effort[^1]:
 
 - [Science Communication with Notebooks](https://curvenote.github.io/notebooks-in-publishing): key document listed above, co-authored by industry and scientific community members, published under CC-BY licensing terms.  This is the authoritative narrative of the main publishing-oriented ideas, definitions and technology in this effort.
 
-- [MyST Markdown site](https://mystmd.org): while MyST is a broader open source effort with its own community and goals, the _Notebooks Now!_ initiative led to many imporant improvements to MyST, and they are all documented on the core project site, ensuring the broadest reach possible.
+- [MyST Markdown site](https://mystmd.org): while MyST is a broader open source effort with its own community and goals, the _Notebooks Now!_ initiative led to many important improvements to MyST, and they are all documented on the core project site, ensuring the broadest reach possible.
 
 - [Published articles showcase site](https://agu.curve.space): this site shows how a few (manually curated) real-life scientific articles from AGU disciplines look like when published with this toolchain.
 
@@ -130,7 +135,7 @@ Plenty of work remains to be done in many areas, and real-world usage will quick
 * Peer review: as indicated above, this initiative didn't really focus on producing any new tools for peer-review. I hope open efforts from different organizations and disciplines, who have existing tools in that space, will explore how to best integrate them with notebook publishing.  
 * Archival: best practices and approaches for long-term archival of notebook-based content, that take into account graceful degradation to PDF as well as the longevity of complex web technologies, are still in their infancy.
 * In-depth testing of the complete end-to-end workflow hasn't yet really happened, and it is likely to uncover many rough edges and limitations of the current prototypes.
-* Work to nucleate action from actors beyond AGU; I see a lot of potential by including other scientific societies with 
+* Work to nucleate action from actors beyond AGU; I see a lot of potential by including other scientific societies with aligned interests, that could facilitate adoption of these ideas across scholarly publishing. 
 
 Based on these, I suggest (with adequate further funding and support), the establishment of working groups on at least _peer review_, and _standards/archiving_, as well as a _coordination group for early adopters across scientific societies and publishers_, to tap into the potential for usage in other disciplines.
 
