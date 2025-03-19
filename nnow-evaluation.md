@@ -1,6 +1,6 @@
 ---
 title: "Notebooks Now! Initiative Evaluation"
-subtitle: "The foundation for an open compuational notebooks publishing ecosystem"
+subtitle: "Towards an open compuational notebooks publishing ecosystem"
 short_title: Notebooks Now! Evaluation
 
 authors:
@@ -24,10 +24,10 @@ affiliations:
     institution: Data Science and Technology, Lawrence Berkeley National Lab
     
 abstract: |
-  This report summarizes an evaluation conducted in late 2024 of the AGU _Notebooks Now!_ initiative, focused on its openness. _Computational Notebooks_ are documents that combine natural language with programming code and the results of the code's execution in a single file. Examples include Jupyter and Mathematica Notebooks. My assessment is that _Notebooks Now!_ is a solid foundation to build publishing systems that include Computational Notebooks as first-class objects for peer-reviewed scholarly publishing. The work completed so far provides open source tools for scientists to author notebooks aimed at peer-reviewed publishing, is based on openly documented standards and approaches, and creates no undue barriers to competition nor locks key functionality behind specific vendors or proprietary services.
+  This report summarizes an evaluation conducted in late 2024 of the AGU _Notebooks Now!_ initiative, focused on its openness. _Computational Notebooks_ are documents that combine natural language with programming code and the results of the code's execution in a single file. Examples include Jupyter and Mathematica Notebooks. My assessment is that _Notebooks Now!_ is a solid foundation to build publishing systems that include computational notebooks as first-class objects for peer-reviewed scholarly publishing. The work completed so far provides open source tools for scientists to author notebooks aimed at peer-reviewed publishing, is based on openly documented standards and approaches, and creates no undue barriers to competition nor locks key functionality behind specific vendors or proprietary services.  A list of open resources resulting from this initiative, as well as recommendations for future work, are provided.
 
 acknowledgements: |
-  I am grateful to Shelley Stall and Brian Sedora from AGU, and Rowan Cockett from Curvenote, for their time and openness during our discussions.  All three were provided an opportunity to see my draft of this report before I finalized it, but its content and all editorial decisions remain mine.  I thank Chris Holdgraf for helpful feedback on earlier drafts; all errors and ommissions remain my sole responsibility.
+  I am grateful to Shelley Stall and Brian Sedora from AGU, and Rowan Cockett from Curvenote, for their time and openness during our discussions.  All three were provided an opportunity to see my draft of this report before I finalized it, to provide input on readability and correctness. Its conclusions and editorial decisions remain my responsibility.  I thank Chris Holdgraf for helpful feedback on earlier drafts; all errors and ommissions are mine.
 
 open_access: true
 
@@ -39,7 +39,7 @@ numbering: true
 exports:
   - format: pdf
     template: lapreprint-typst
-    kind: v1.0rc2
+    kind: v1.0
 ---
 
 ```{raw:typst}
@@ -48,7 +48,7 @@ exports:
 
 ---
 
-# Scope of this audit and summary: openness for researchers, a level playing field for publishers
+# Scope and executive summary
 
 This document reports on my disucssions with the AGU and Curvenote teams working on the current _Notebooks Now!_ prototype infrastructure. The information here is based on three one-hour discussions with Brian Sedora and Shelley Stall from AGU, and Rowan Cockett from Curvenote. My goal was to answer the following question: 
 
@@ -62,7 +62,7 @@ Finally, I note that this document focuses only on the implementation of tools i
 
 [^myst]: [MyST](https://mystmd.org), short for "Markedly Structured Text", is an extension to Markdown aimed at scholarly publishing, originally strated by the author ca. 2017 as [a simple specification](https://github.com/executablebooks/myst) that combined the syntax of Markdown with the programmatic extensibilty of Restructured Text. This simple spec was then developed with funding from the Sloan Foundation by C. Holdgraf, J. Stachurski, G. Caporaso and the Executable Books team, leading to a Sphinx plugin in Python used by JupyterBook v1. Starting in 2020, R. Cockett and the Curvenote team created a [new, modern TypeScript implementation](https://github.com/jupyter-book/mystmd) that built upon the MyST specification, and introduced a formal document structure and engine for reproducible publishing. This new document engine used modern web technology, and could operate both in a live JupyterLab session and at the command-line. It also combined the MyST specification with an engine that could generate HTML, PDF and other outputs. This implementation was contributed to the community by Curvenote as open source and is today the official MyST distribution; work to integrate and further develop this new open source project was also funded in-part by the original Jupyter Book grant. MyST will be the engine for JupyterBook v2 ([now an official Jupyter Subproject](https://blog.jupyterbook.org/posts/2024-11-11-jupyter-book-org)), replacing Sphinx and the previous Python plugin.
 
-# Context: open science and the current realities in publishing
+# Context: open science and scholarly publishing
 
 Scientific publishing is a complex ecosystem where a mix of researchers, professional organizations, non-profit entities and commercial vendors all participate. The focus of my audit was to ascertain that we will be able to move towards a future that includes computational notebooks as part of the published record, where:
 
@@ -77,7 +77,7 @@ Importantly, this does _not_ mean that the entire end-to-end toolchain used in c
 My focus was only on ensuring that **scientists could have a clean field for creating notebook-based publications without any proprietary bottlenecks, and that for anyone wanting to work on the publishing side of the problem, the playing field would be open and fair**. Obviously such efforts may require publishing competitors to adapt their existing systems to these new formats or build new tools. I only looked for any artificial barriers that would hinder such open competition in the marketplace.
 
 
-# The publishing workflow
+# The notebook publishing workflow
 
 ```{figure} nbpub-outline.png
 :label: fig:workflow
@@ -120,7 +120,7 @@ The following summarizes key outcomes and resources resulting from this effort[^
 
 [^1]: The team at Posit Inc. also contributed to the authorship of some of these documents and made corresponding improvements to the Quarto toolchain; I link to it here but I did not specifically look at their architecture, nor met with their team, as part of this evaluation.
 
-# Conclusions and Recommendations for further work
+# Conclusions and recommendations for further work
 
 As summarized in the abstract (and hopefully supported by the details in this report), I see _Notebooks Now!_ as an excellent foundation for the development of an open ecosystem for including computational notebooks in the scientific record. I hope this initiative will capture the excitement around these ideas that was palpable during various activities at AGU 2024, and the interest that has been expressed by members of other scientific disciplines, and that in 2025 and beyond this moves from the early prototyping stage into broad, real-world adoption.
 
@@ -139,4 +139,4 @@ Finally, I recommend that the _Notebooks Now!_ team **gather some of the documen
 
 The _Notebooks Now!_ initiative drew inspiration from the role of Jupyter Notebooks in science. I am a co-founder of Project Jupyter and have held various leadership roles in the project: during the work summarized in this report I served on its Executive Council, which is a volunteer position. I hold no stake in Curvenote Inc. I was not compensated for this assessment and I have done it as part of my professional service to the scientific community.
 
-_Note:_ this document was authored using MyST, with PDF output being generated by the [LaPreprint-Typst](https://github.com/myst-templates/lapreprint-typst) template.
+_Colophon:_ this document was authored using MyST and JupyterLab. PDF output was generated by the [LaPreprint-Typst](https://github.com/myst-templates/lapreprint-typst) template.
