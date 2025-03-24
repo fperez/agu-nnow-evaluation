@@ -3,6 +3,9 @@ title: "Notebooks Now! Initiative Evaluation"
 subtitle: "Towards an open compuational notebooks publishing ecosystem"
 short_title: Notebooks Now! Evaluation
 
+# "Main" DOI for the repo, that Zenodo resolves to the latest version automatically:
+doi: 10.5281/zenodo.15061830
+
 authors:
   - name: Fernando Pérez
     affiliations:
@@ -39,7 +42,7 @@ numbering: true
 exports:
   - format: pdf
     template: lapreprint-typst
-    kind: v1.0
+    kind: v1.1
 ---
 
 ```{raw:typst}
